@@ -1,0 +1,312 @@
+{
+  "name": "Upside Down",
+  "type": "emotional_animatronic",
+  "description": "A hauntingly beautiful animatronic with a square body split down the middle - the right side decorated with happy hearts and radiating joy, while the left side bears broken hearts symbolizing sorrow. Her purple coloring shifts with her emotional state, creating a deeply unsettling contrast.",
+  "colors": {
+    "primary": "#9370DB",
+    "secondary": "#BA55D3",
+    "accent": "#DDA0DD",
+    "dark_purple": "#4B0082",
+    "happy_hearts": "#FFB6C1",
+    "broken_hearts": "#8B0000",
+    "glow": "#DA70D6"
+  },
+  "body": {
+    "type": "square_construct",
+    "head": {
+      "shape": "square",
+      "material": "smooth_metal",
+      "color_primary": "#9370DB",
+      "color_secondary": "#4B0082",
+      "split_design": true,
+      "left_side": {
+        "color": "#4B0082",
+        "emotion": "sorrow",
+        "glow": "dim_red"
+      },
+      "right_side": {
+        "color": "#9370DB",
+        "emotion": "joy",
+        "glow": "bright_pink"
+      },
+      "eyes": {
+        "type": "asymmetrical_pair",
+        "left_eye": {
+          "type": "glowing_teardrop",
+          "color": "#8B0000",
+          "glow_intensity": 0.7,
+          "tear_animation": true,
+          "expression": "sorrowful"
+        },
+        "right_eye": {
+          "type": "glowing_circle",
+          "color": "#FFB6C1",
+          "glow_intensity": 0.9,
+          "sparkle_animation": true,
+          "expression": "joyful"
+        }
+      },
+      "mouth": {
+        "type": "split_mouth",
+        "left_mouth": {
+          "type": "downturned_frown",
+          "color": "#8B0000",
+          "material": "dark_metal"
+        },
+        "right_mouth": {
+          "type": "upturned_smile",
+          "color": "#FFB6C1",
+          "material": "bright_metal"
+        },
+        "articulation_range": 90
+      }
+    },
+    "torso": {
+      "shape": "perfect_square",
+      "material": "brushed_metal",
+      "dimensions": {
+        "width": 1.5,
+        "height": 2.0,
+        "depth": 1.5
+      },
+      "color_scheme": "emotional_split",
+      "vertical_line": {
+        "type": "central_dividing_line",
+        "color": "#FFD700",
+        "width": 0.1,
+        "material": "glowing_gold",
+        "glow_intensity": 0.8,
+        "runs_from": "top_to_bottom"
+      },
+      "left_side": {
+        "background_color": "#4B0032",
+        "emotion": "sadness",
+        "pattern": "matte_dark",
+        "decorations": [
+          {
+            "type": "broken_heart",
+            "position": "upper_left",
+            "color": "#8B0000",
+            "size": 0.3,
+            "animation": "drip_downward",
+            "glow": true
+          },
+          {
+            "type": "broken_heart",
+            "position": "middle_left",
+            "color": "#DC143C",
+            "size": 0.25,
+            "animation": "pulse_sadly",
+            "glow": true
+          },
+          {
+            "type": "broken_heart",
+            "position": "lower_left",
+            "color": "#8B0000",
+            "size": 0.35,
+            "animation": "shatter_effect",
+            "glow": true
+          },
+          {
+            "type": "tear_marks",
+            "pattern": "vertical_streams",
+            "color": "#DAA520",
+            "spacing": "regular"
+          }
+        ]
+      },
+      "right_side": {
+        "background_color": "#DA70D6",
+        "emotion": "happiness",
+        "pattern": "glossy_bright",
+        "decorations": [
+          {
+            "type": "happy_heart",
+            "position": "upper_right",
+            "color": "#FFB6C1",
+            "size": 0.3,
+            "animation": "bounce_happily",
+            "glow": true
+          },
+          {
+            "type": "happy_heart",
+            "position": "middle_right",
+            "color": "#FF69B4",
+            "size": 0.25,
+            "animation": "pulse_joyfully",
+            "glow": true
+          },
+          {
+            "type": "happy_heart",
+            "position": "lower_right",
+            "color": "#FFB6C1",
+            "size": 0.35,
+            "animation": "rotate_happily",
+            "glow": true
+          },
+          {
+            "type": "sparkles",
+            "pattern": "scattered",
+            "color": "#FFD700",
+            "count": 12,
+            "animation": "twinkle"
+          }
+        ]
+      }
+    },
+    "limbs": {
+      "upper_left_arm": {
+        "type": "articulated_square_limb",
+        "material": "dark_purple_metal",
+        "color": "#4B0082",
+        "segments": 2,
+        "articulation_range": 180,
+        "hand_type": "grasping_claw",
+        "surface_decoration": "broken_heart_pattern"
+      },
+      "upper_right_arm": {
+        "type": "articulated_square_limb",
+        "material": "bright_purple_metal",
+        "color": "#DA70D6",
+        "segments": 2,
+        "articulation_range": 180,
+        "hand_type": "gentle_palm",
+        "surface_decoration": "happy_heart_pattern"
+      },
+      "lower_left_leg": {
+        "type": "articulated_square_limb",
+        "material": "dark_purple_metal",
+        "color": "#4B0082",
+        "segments": 2,
+        "articulation_range": 120,
+        "foot_type": "stamping_heel",
+        "surface_decoration": "broken_heart_pattern"
+      },
+      "lower_right_leg": {
+        "type": "articulated_square_limb",
+        "material": "bright_purple_metal",
+        "color": "#DA70D6",
+        "segments": 2,
+        "articulation_range": 120,
+        "foot_type": "graceful_point",
+        "surface_decoration": "happy_heart_pattern"
+      }
+    }
+  },
+  "animations": {
+    "idle": {
+      "description": "Upside Down stands motionless, hearts glowing and pulsing with conflicting emotions, central line shimmering",
+      "loop": true,
+      "duration": 3000,
+      "components": [
+        "left_hearts_pulse_sadly",
+        "right_hearts_pulse_joyfully",
+        "eyes_opposing_directions"
+      ]
+    },
+    "joyful_state": {
+      "description": "Right side brightens intensely, happy hearts bounce and sparkle, right eye radiates light",
+      "trigger": "positive_event",
+      "duration": 4000,
+      "right_side_intensity": 1.0,
+      "left_side_intensity": 0.3
+    },
+    "sorrowful_state": {
+      "description": "Left side darkens ominously, broken hearts drip and shatter, left eye weeps, tears stream down",
+      "trigger": "negative_event",
+      "duration": 4000,
+      "left_side_intensity": 1.0,
+      "right_side_intensity": 0.3
+    },
+    "conflicted_struggle": {
+      "description": "Both sides flare intensely, hearts shake violently, body convulses between emotions, central line flickers",
+      "duration": 5000,
+      "intensity": "chaotic"
+    },
+    "heart_shatter": {
+      "description": "All broken hearts on left side explode into fragments and reassemble repeatedly",
+      "duration": 3000,
+      "effect": "shattering_animation"
+    },
+    "heart_glow": {
+      "description": "Happy hearts on right side burst with brilliant light and radiating warmth",
+      "duration": 3000,
+      "effect": "radiant_light_burst"
+    },
+    "split_movement": {
+      "description": "Left arm reaches out menacingly while right arm reaches out gently, creating disturbing asymmetry",
+      "duration": 3000
+    },
+    "emotional_spiral": {
+      "description": "Body rotates while switching between joy and sorrow rapidly, hearts chase each other around the torso",
+      "duration": 4000,
+      "rotation_speed": "increasing"
+    },
+    "dual_reach": {
+      "description": "Both arms extend toward player - left with threatening intent, right with inviting warmth, creating impossible choice",
+      "duration": 3000,
+      "psychological_effect": "high"
+    },
+    "heartbeat_sync": {
+      "description": "All hearts pulse in unison, body vibrates with synchronized rhythm, creating hypnotic effect",
+      "duration": 2000,
+      "frequency": "variable"
+    }
+  },
+  "ai_behaviors": {
+    "primary_strategy": "emotional_manipulation",
+    "secondary_strategy": "conflicted_attack",
+    "personality": "bipolar_haunting",
+    "threat_level": "very_high",
+    "intelligence": "emotionally_aware",
+    "combat_style": "unpredictable_dual_nature",
+    "emotional_volatility": "extreme",
+    "psychological_effect": "deeply_disturbing",
+    "territorial": true,
+    "lures_with": "emotional_empathy"
+  },
+  "mechanics": {
+    "movement_speed": {
+      "idle_speed": 0,
+      "joyful_speed": 0.6,
+      "sorrowful_speed": 0.8,
+      "conflicted_speed": 1.5
+    },
+    "damage_types": ["emotional_manipulation", "sudden_violence", "psychological_terror"],
+    "special_ability": "emotional_state_switching",
+    "emotional_states": [
+      "pure_joy",
+      "deep_sorrow",
+      "chaotic_conflict",
+      "manic_laughter",
+      "catatonic_despair"
+    ],
+    "player_interaction_range": 2.0,
+    "empathy_lure_range": 3.0,
+    "weak_point": "central_dividing_line",
+    "power_level": 87,
+    "difficulty": "psychological_hard"
+  },
+  "encounters": {
+    "first_encounter": "Day 7 - Emotional Breakdown",
+    "typical_location": "Mirror Maze, Emotional Theatre",
+    "activity_hours": "all_hours",
+    "hunting_frequency": "very_high",
+    "trigger_words": ["happy", "sad", "love", "heartbreak"],
+    "player_manipulation": "targets_emotional_vulnerabilities"
+  },
+  "visual_design": {
+    "overall_aesthetic": "bipolar_duality_horror",
+    "inspiration": "conflicted_emotions_made_flesh",
+    "silhouette": "imposing_square_menace",
+    "central_division": "golden_line_of_separation",
+    "left_atmosphere": "decay_and_sorrow",
+    "right_atmosphere": "joy_and_warmth",
+    "psychological_impact": "deeply_unsettling_juxtaposition"
+  },
+  "lore": {
+    "name_origin": "Called 'Upside Down' because her emotions are inverted - appearing joyful when filled with malice, appearing sorrowful when planning to strike",
+    "nature": "Embodies the duality of human emotion twisted into something monstrous",
+    "danger": "Targets players emotionally - luring them with false compassion before striking with sudden violence"
+  }
+}
