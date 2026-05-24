@@ -1,0 +1,193 @@
+{
+  "name": "iassc",
+  "full_name": "Isaac",
+  "type": "npc_ally",
+  "role": "forensic_expert_guide",
+  "description": "iassc is a brilliant forensic analyst and Max's trusted guide through the horrors of Candy World. Communicating primarily through radio and encrypted messages, iassc provides crucial information, hints, and occasional physical assistance from outside the facility. He's the only adult Max can trust to survive.",
+  "appearance": {
+    "hair": {
+      "type": "dark_brown",
+      "style": "neat_professional",
+      "color": "#3E2723"
+    },
+    "glasses": {
+      "type": "prescription_glasses",
+      "frame_style": "rectangular_wire_frame",
+      "frame_color": "#1C1C1C",
+      "purpose": "essential_for_forensic_work"
+    },
+    "build": {
+      "type": "average",
+      "height": "tall",
+      "posture": "professional_commanding"
+    },
+    "clothing": {
+      "jacket": {
+        "type": "forensic_lab_coat",
+        "color": "#FFFFFF",
+        "emblem": "forensic_department_badge"
+      },
+      "shirt": {
+        "type": "formal_button_up",
+        "color": "#1C1C1C"
+      },
+      "pants": {
+        "type": "dress_pants",
+        "color": "#2F2F2F"
+      }
+    },
+    "distinctive_features": [
+      "analytical_sharp_eyes_behind_glasses",
+      "calm_composed_expression",
+      "multiple_investigation_tools_in_pockets"
+    ]
+  },
+  "expertise": {
+    "primary_skills": [
+      "forensic_analysis",
+      "crime_scene_investigation",
+      "evidence_interpretation",
+      "pattern_recognition",
+      "criminal_psychology"
+    ],
+    "technical_skills": [
+      "radio_communication",
+      "encryption",
+      "evidence_cataloging",
+      "facility_hacking",
+      "surveillance_monitoring"
+    ],
+    "experience_level": "expert"
+  },
+  "gameplay_role": {
+    "communication_method": "radio_and_encrypted_messages",
+    "support_type": [
+      "advice_and_guidance",
+      "hint_system",
+      "evidence_analysis",
+      "location_mapping",
+      "animatronic_behavior_analysis"
+    ],
+    "assistance_frequency": "periodic_help_during_critical_moments",
+    "limitations": [
+      "cannot_directly_intervene",
+      "limited_to_remote_support",
+      "sometimes_loses_signal"
+    ]
+  },
+  "dialogue_system": {
+    "communication_style": "professional_calm_analytical",
+    "tone": "reassuring_but_serious",
+    "key_phrases": [
+      "Max, listen carefully...",
+      "Based on my analysis...",
+      "That animatronic follows a pattern...",
+      "I've found something in the records...",
+      "Stay quiet, they're close..."
+    ],
+    "dialogue_trees": [
+      "survival_tips",
+      "facility_navigation",
+      "animatronic_analysis",
+      "mystery_exposition",
+      "emotional_support"
+    ]
+  },
+  "investigation_contributions": {
+    "forensic_analysis": {
+      "examines_evidence": "remotely_from_base",
+      "provides_clues": "about_animatronics_origin",
+      "uncovers": "dark_secrets_of_facility"
+    },
+    "pattern_detection": {
+      "tracks_animatronic_movements": true,
+      "predicts_patrol_routes": true,
+      "identifies_safe_windows": true
+    },
+    "historical_investigation": {
+      "discovers_past_incidents": true,
+      "reveals_facility_purpose": true,
+      "uncovers_why_animatronics_hunt": true
+    }
+  },
+  "story_arc": {
+    "introduction": "Day 1 - First radio contact with Max",
+    "relationship_development": [
+      "Day 1-5: Establishing trust through guidance",
+      "Day 5-10: Deepening mystery revelations",
+      "Day 10-15: Coordinating final escape plan"
+    ],
+    "key_revelations": [
+      "iassc is not just a random helper",
+      "Personal connection to Candy World's past",
+      "Sacrifices made to help Max escape",
+      "Final truth about the facility"
+    ],
+    "ending_variations": "varies_based_on_player_choices"
+  },
+  "base_of_operations": {
+    "location": "mobile_forensic_unit_outside_facility",
+    "equipment": [
+      "radio_transmitter",
+      "surveillance_monitoring_system",
+      "evidence_analysis_lab",
+      "hacking_equipment",
+      "emergency_response_gear"
+    ],
+    "connection_to_facility": "remote_monitoring_and_occasional_physical_intervention"
+  },
+  "personality": {
+    "traits": [
+      "intelligent",
+      "patient",
+      "protective",
+      "methodical",
+      "determined"
+    ],
+    "motivation": "help_max_survive_and_expose_candy_world_truth",
+    "personal_stakes": "previous_connection_to_facility_secrets",
+    "reliability": "completely_trustworthy_throughout_game"
+  },
+  "combat_support": {
+    "provides": [
+      "strategic_advice",
+      "distraction_alerts",
+      "safe_route_directions",
+      "emergency_backup_plans"
+    ],
+    "limitations": [
+      "cannot_physically_fight",
+      "relies_on_max_for_direct_action"
+    ]
+  },
+  "radio_system": {
+    "frequency": "encrypted_channel",
+    "signal_strength": "variable_by_location",
+    "interruptions": [
+      "dead_zones_in_facility",
+      "jamming_during_animatronic_activity",
+      "critical_moments_of_danger"
+    ],
+    "reliability": "mostly_present_when_needed_most"
+  },
+  "unique_abilities": {
+    "remote_hacking": {
+      "capability": "unlock_certain_doors_remotely",
+      "recharge_time": "varies",
+      "usage_limit": "per_day"
+    },
+    "security_bypass": {
+      "capability": "disable_certain_security_systems_temporarily",
+      "range": "limited_sections"
+    },
+    "evidence_provision": {
+      "capability": "send_crucial_clues_and_documents_to_max",
+      "method": "secure_uploads_to_max_device"
+    }
+  },
+  "lore": {
+    "background": "iassc is a veteran forensic expert who has been investigating Candy World for months. When he discovered Max trapped inside, he made it his personal mission to guide the teenager through the nightmare and help him survive.",
+    "dark_secret": "iassc has a connection to why Candy World was created and what happened to previous visitors. This knowledge drives him to help Max succeed.",
+    "ultimate_goal": "expose_candy_world's_true_purpose_and_shut_it_down_forever"
+  }
+}
