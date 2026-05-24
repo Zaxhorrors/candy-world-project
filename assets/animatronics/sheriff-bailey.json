@@ -1,0 +1,268 @@
+{
+  "name": "Sheriff Bailey",
+  "type": "western_animatronic",
+  "description": "A menacing western-themed animatronic with a circular body, wooden legs, a single glowing eye, wearing a sheriff's hat and sporting a prominent mustache. Armed with a grey revolver for intimidating encounters.",
+  "colors": {
+    "primary": "#8B4513",
+    "secondary": "#D2691E",
+    "accent": "#FFD700",
+    "metal": "#A9A9A9",
+    "wood": "#654321"
+  },
+  "body": {
+    "type": "western_construct",
+    "head": {
+      "shape": "circular",
+      "material": "reinforced_metal",
+      "color": "#8B4513",
+      "eye": {
+        "type": "single_glowing_orb",
+        "position": "center",
+        "color": "#FF4500",
+        "glow_intensity": 0.9,
+        "articulation": true,
+        "rotation_range": 180
+      },
+      "facial_features": {
+        "mustache": {
+          "type": "prominent_handlebar",
+          "color": "#2F1F0F",
+          "material": "metallic_coils",
+          "width": 0.4,
+          "articulated": true,
+          "twitch_animation": true
+        },
+        "mouth": {
+          "type": "metal_grin",
+          "color": "#000000",
+          "articulation_range": 60
+        }
+      },
+      "hat": {
+        "type": "sheriff_hat",
+        "color": "#1C1C1C",
+        "material": "worn_leather_metal_blend",
+        "accent_color": "#FFD700",
+        "badge": {
+          "type": "star_badge",
+          "color": "#FFD700",
+          "text": "SHERIFF"
+        },
+        "rotation_capability": true
+      }
+    },
+    "torso": {
+      "shape": "perfect_circle",
+      "diameter": 1.5,
+      "material": "riveted_metal",
+      "color": "#8B4513",
+      "pattern": "weathered_western",
+      "segments": [
+        {
+          "name": "upper_circle",
+          "color": "#A0522D",
+          "rivets": 12
+        },
+        {
+          "name": "middle_circle",
+          "color": "#8B4513",
+          "rivets": 16
+        },
+        {
+          "name": "lower_circle",
+          "color": "#654321",
+          "rivets": 12
+        }
+      ],
+      "chest_emblem": {
+        "type": "sheriff_star",
+        "color": "#FFD700",
+        "size": 0.3
+      },
+      "rotation": {
+        "articulated": true,
+        "rotation_range": 360,
+        "speed": "variable"
+      }
+    },
+    "limbs": {
+      "upper_left_arm": {
+        "type": "articulated_metal_arm",
+        "segments": 2,
+        "color": "#8B4513",
+        "articulation_range": 180,
+        "hand_type": "revolver_holding_grip"
+      },
+      "upper_right_arm": {
+        "type": "articulated_metal_arm",
+        "segments": 2,
+        "color": "#8B4513",
+        "articulation_range": 180,
+        "hand_type": "threatening_claw"
+      },
+      "left_leg": {
+        "type": "wooden_peg_leg",
+        "material": "aged_wood",
+        "color": "#654321",
+        "segments": 2,
+        "joints": [
+          {
+            "type": "ball_joint",
+            "articulation_range": 120
+          },
+          {
+            "type": "ankle_joint",
+            "articulation_range": 90
+          }
+        ],
+        "foot": {
+          "type": "wooden_peg",
+          "color": "#3E2723",
+          "size": "large"
+        }
+      },
+      "right_leg": {
+        "type": "wooden_peg_leg",
+        "material": "aged_wood",
+        "color": "#654321",
+        "segments": 2,
+        "joints": [
+          {
+            "type": "ball_joint",
+            "articulation_range": 120
+          },
+          {
+            "type": "ankle_joint",
+            "articulation_range": 90
+          }
+        ],
+        "foot": {
+          "type": "wooden_peg",
+          "color": "#3E2723",
+          "size": "large"
+        }
+      }
+    },
+    "weapon": {
+      "name": "Grey Revolver",
+      "type": "six_shooter",
+      "material": "aged_grey_metal",
+      "color": "#A9A9A9",
+      "held_by": "upper_left_arm",
+      "barrel_length": 0.4,
+      "chambers": 6,
+      "functional_animations": [
+        "aim",
+        "fire",
+        "spin",
+        "twirl",
+        "holster",
+        "draw"
+      ],
+      "muzzle_flash": {
+        "type": "orange_red_glow",
+        "intensity": 0.8,
+        "duration": 200
+      }
+    }
+  },
+  "animations": {
+    "idle": {
+      "description": "Sheriff Bailey stands at attention, twirling his revolver and twitching his mustache",
+      "loop": true,
+      "duration": 4000,
+      "components": [
+        "weapon_twirl",
+        "mustache_twitch",
+        "eye_blink"
+      ]
+    },
+    "alert": {
+      "description": "Single eye widens and glows brighter, mustache bristles, hand tightens on revolver",
+      "trigger": "player_detected",
+      "duration": 1500
+    },
+    "aim": {
+      "description": "Sheriff Bailey raises revolver, eye narrows, entire body rotates to face target",
+      "duration": 2000
+    },
+    "fire": {
+      "description": "Revolver barrel flashes, recoil animation, body jerks backward slightly",
+      "muzzle_flash": true,
+      "sound": "revolver_shot",
+      "duration": 800
+    },
+    "reload": {
+      "description": "Revolver cylinder spins, chambers click, Sheriff Bailey's eye glows brighter",
+      "duration": 3000
+    },
+    "draw_and_fire": {
+      "description": "Rapid draw from holster, immediate aim, and quick fire sequence",
+      "duration": 2500,
+      "chain": ["draw", "aim", "fire"]
+    },
+    "stalk": {
+      "description": "Slow wooden leg movement, body rotates, revolver at ready, eye scanning",
+      "duration": 5000
+    },
+    "advance": {
+      "description": "Wooden legs stomp forward menacingly, revolver pointed, mustache twitches with threat",
+      "speed": "medium",
+      "duration": 4000
+    },
+    "threat_posture": {
+      "description": "Circular body tilts, revolver spinning continuously, eye glowing intensely, hat brim shadows face",
+      "duration": 3000
+    },
+    "mustache_taunt": {
+      "description": "Exaggerated mustache twitching and curling, mocking movements with revolver",
+      "duration": 2500
+    },
+    "mechanical_laugh": {
+      "description": "Body rotates and vibrates, mustache bounces, eye blinks maniacally",
+      "duration": 2000
+    }
+  },
+  "ai_behaviors": {
+    "primary_strategy": "intimidate_with_firepower",
+    "secondary_strategy": "circle_and_fire",
+    "personality": "western_outlaw_sheriff",
+    "threat_level": "extreme",
+    "intelligence": "calculating",
+    "combat_style": "ranged_gunslinger",
+    "taunt_frequency": "high",
+    "territorial": true,
+    "trigger_happy": true
+  },
+  "mechanics": {
+    "movement_speed": {
+      "idle_speed": 0,
+      "stalk_speed": 0.4,
+      "advance_speed": 0.7,
+      "chase_speed": 1.2
+    },
+    "damage_types": ["revolver_shot", "intimidation", "charge"],
+    "special_ability": "rapid_fire_sequence",
+    "accuracy": 0.85,
+    "fire_rate": "variable",
+    "rounds_per_magazine": 6,
+    "reload_time": 3000,
+    "weak_point": "single_eye",
+    "power_level": 88,
+    "difficulty": "extreme"
+  },
+  "encounters": {
+    "first_encounter": "Day 5 - High Noon Showdown",
+    "typical_location": "Candy Saloon, Western District",
+    "activity_hours": "all_hours",
+    "hunting_frequency": "very_high",
+    "catchphrase": "Draw, pardner!"
+  },
+  "visual_design": {
+    "overall_aesthetic": "wild_west_horror",
+    "inspiration": "haunted_sheriff_construct",
+    "silhouette": "imposing_circular_menace",
+    "lighting": "orange_and_shadow",
+    "atmosphere": "tumbleweed_and_gunpowder"
+  }
+}
