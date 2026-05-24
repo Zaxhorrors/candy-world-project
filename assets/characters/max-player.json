@@ -3,7 +3,7 @@
   "full_name": "Maximilian",
   "type": "player_character",
   "role": "protagonist_survivor",
-  "description": "Max is a skinny blonde teenager trapped in the nightmarish Candy World. As the player character, Max must navigate the facility, uncover its dark secrets, survive for 15 days, and escape. With only iassc's guidance through radio, Max must evade deadly animatronics while piecing together the mystery of why he was brought here.",
+  "description": "Max is a skinny blonde teenager trapped in the nightmarish Candy World. As the player character, Max must navigate the facility, uncover its dark secrets, survive for 15 days, and escape. With only iassc's guidance through radio, Max must evade deadly animatronics while piecing together the mystery of why he was brought here. Max has 5 lives - if he loses them all, the game ends and all progress is reset.",
   "appearance": {
     "hair": {
       "type": "blonde",
@@ -37,6 +37,127 @@
       "pale_from_stress",
       "moves_quietly_when_scared"
     ]
+  },
+  "lives_system": {
+    "total_lives": 5,
+    "current_lives": 5,
+    "lives_remaining_display": "visible_on_hud",
+    "life_loss_mechanics": {
+      "loss_condition": "caught_by_animatronic",
+      "primary_threat": "Candy Josh eating/destroying Max"
+    },
+    "jumpscare_mechanics": {
+      "trigger": "when_caught_by_candy_josh",
+      "animation": "candy_josh_jumpscare_attack",
+      "visual_effects": [
+        "screen_shake_violent",
+        "red_vignette_screen_flash",
+        "animatronic_attack_animation",
+        "blood_splatter_effect"
+      ],
+      "audio": {
+        "sound_effect": "horrific_bite_crunch",
+        "scream": "max_death_scream",
+        "music": "jumpscare_sting"
+      }
+    },
+    "game_over_condition": {
+      "trigger": "all_5_lives_lost",
+      "action": "game_ends_progress_reset",
+      "consequence": "complete_restart_required",
+      "message": "Game Over - All progress lost. Restart from Day 1"
+    }
+  },
+  "death_respawn_system": {
+    "respawn_location": "safe_starting_point",
+    "respawn_details": {
+      "location": "ticket_booth_entrance",
+      "condition": "safe_from_immediate_threat",
+      "inventory": "retained_except_active_items",
+      "progress": "same_day_continues"
+    },
+    "death_consequences": [
+      {
+        "life_loss": 1,
+        "consequence": "lose_1_life_5_remain"
+      },
+      {
+        "life_loss": 2,
+        "consequence": "lose_2_lives_4_remain_warning"
+      },
+      {
+        "life_loss": 3,
+        "consequence": "lose_3_lives_2_remain_critical"
+      },
+      {
+        "life_loss": 4,
+        "consequence": "lose_4_lives_1_remain_desperate"
+      },
+      {
+        "life_loss": 5,
+        "consequence": "game_over_all_progress_lost"
+      }
+    ]
+  },
+  "candy_josh_jumpscare": {
+    "name": "Candy Josh Jumpscare - The Eating Attack",
+    "trigger_conditions": [
+      "candy_josh_catches_max_while_hunting",
+      "max_caught_out_of_hiding_spot",
+      "failed_escape_attempt"
+    ],
+    "jumpscare_sequence": [
+      {
+        "phase": 1,
+        "name": "detection",
+        "description": "Candy Josh spots Max with a piercing screech",
+        "duration": 500,
+        "effect": "screen_shakes"
+      },
+      {
+        "phase": 2,
+        "name": "approach",
+        "description": "Candy Josh lunges toward Max with mouth wide open",
+        "duration": 800,
+        "effect": "rapid_camera_zoom_in"
+      },
+      {
+        "phase": 3,
+        "name": "attack",
+        "description": "Candy Josh bites down on Max in graphic detail",
+        "duration": 1200,
+        "effects": [
+          "blood_splatter_animation",
+          "screen_goes_red",
+          "max_screams",
+          "crunching_sound"
+        ]
+      },
+      {
+        "phase": 4,
+        "name": "darkness",
+        "description": "Screen fades to black as Max loses consciousness",
+        "duration": 1000,
+        "effect": "fade_to_black"
+      },
+      {
+        "phase": 5,
+        "name": "respawn",
+        "description": "Max wakes up at the ticket booth, life reduced by 1",
+        "duration": 1500,
+        "effect": "fade_in_from_black",
+        "consequence": "life_lost_hud_updated"
+      }
+    ],
+    "visual_gore_level": "moderate_horror",
+    "audio_design": [
+      "deep_animalistic_growl",
+      "bone_crunching_sound",
+      "max_choking_scream",
+      "rapid_heartbeat_audio"
+    ],
+    "psychological_impact": "extremely_disturbing",
+    "replayability_penalty": "each_death_discourages_careless_play"
   },
   "player_mechanics": {
     "health_system": {
@@ -88,7 +209,8 @@
       "find_escape_route",
       "survive_final_day"
     ],
-    "game_loop": "wake_up_avoid_hunt_investigate_survive_repeat"
+    "game_loop": "wake_up_avoid_hunt_investigate_survive_repeat",
+    "difficulty_modifier": "lives_system_increases_tension"
   },
   "communication_system": {
     "radio": {
@@ -178,7 +300,13 @@
       "communication": "radio_based",
       "support_type": "tactical_and_emotional"
     },
-    "animatronics": {
+    "candy_josh": {
+      "type": "primary_threat",
+      "relationship": "hunted_by",
+      "threat_level": "extreme",
+      "danger": "can_kill_max_in_one_jumpscare"
+    },
+    "other_animatronics": {
       "relationship": "hunted_by",
       "survival_priority": "evade_at_all_costs"
     }
@@ -192,7 +320,8 @@
       "trembling_when_hiding",
       "decision_making_difficulty"
     ],
-    "recovery": "safety_rest_iassc_support"
+    "recovery": "safety_rest_iassc_support",
+    "trauma_from_deaths": "each_life_loss_increases_fear"
   },
   "gameplay_choices": {
     "moral_decisions": [
@@ -246,12 +375,24 @@
   "lore": {
     "background": "Max is an ordinary teenager who was lured into Candy World under false pretenses. He has no idea why he was chosen, but he knows he must survive and uncover the truth. With iassc's guidance, he's determined to escape and expose what's really happening here.",
     "personal_stakes": "his_life_and_freedom",
-    "motivation": "survive_and_escape_candy_world"
+    "motivation": "survive_and_escape_candy_world",
+    "additional_pressure": "only_5_lives_to_make_it_through"
   },
   "difficulty_scaling": {
-    "easy_mode": "more_hide_spots_fewer_animatronics",
-    "normal_mode": "balanced_challenge",
-    "hard_mode": "fewer_resources_aggressive_hunting",
-    "nightmare_mode": "animatronics_always_hunting"
+    "easy_mode": "more_hide_spots_fewer_animatronics_6_lives",
+    "normal_mode": "balanced_challenge_5_lives",
+    "hard_mode": "fewer_resources_aggressive_hunting_3_lives",
+    "nightmare_mode": "animatronics_always_hunting_1_life"
+  },
+  "hud_elements": {
+    "lives_counter": {
+      "display": "top_left_corner",
+      "shows": "5_hearts_or_life_icons",
+      "changes": "immediately_when_life_lost"
+    },
+    "death_warning": {
+      "1_life_remaining": "red_pulsing_animation",
+      "message": "Max's Last Life - Extreme Danger"
+    }
   }
 }
