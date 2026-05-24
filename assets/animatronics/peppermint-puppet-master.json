@@ -1,7 +1,7 @@
 {
-  "name": "Peppermint Puppet Master",
+  "name": "Candy Josh",
   "type": "cat_animatronic",
-  "description": "A menacing feline animatronic with peppermint green and magenta coloring, holding a cute bunny-cat hybrid puppet",
+  "description": "A menacing feline animatronic named Candy Josh with peppermint green and magenta coloring, holding his puppet companion Blaze - a cute bunny-cat hybrid",
   "colors": {
     "primary": "#00D946",
     "secondary": "#FF00FF",
@@ -123,7 +123,7 @@
     }
   },
   "puppet": {
-    "name": "Mint Buddy",
+    "name": "Blaze",
     "type": "bunny_cat_hybrid",
     "size": "small",
     "colors": {
@@ -184,7 +184,7 @@
   },
   "animations": {
     "idle": {
-      "description": "Cat sits calmly, occasionally moving the puppet around",
+      "description": "Candy Josh sits calmly, occasionally moving Blaze around",
       "loop": true,
       "duration": 3000
     },
@@ -194,35 +194,35 @@
       "duration": 2000
     },
     "stalk": {
-      "description": "Low crouch, slow deliberate movements, puppet held at chest",
+      "description": "Low crouch, slow deliberate movements, Blaze held at chest",
       "duration": 5000
     },
     "pounce": {
-      "description": "Rapid acceleration, puppet swings around, claws extended",
+      "description": "Rapid acceleration, Blaze swings around, claws extended",
       "duration": 1500
     },
     "puppet_show": {
-      "description": "Animatronic holds puppet up and manipulates it expressively",
+      "description": "Candy Josh holds Blaze up and manipulates him expressively",
       "duration": 4000,
       "puppet_animations": ["wave_paws", "bounce", "spin"]
     },
     "distraction": {
-      "description": "Uses puppet to distract player while positioning for attack",
+      "description": "Candy Josh uses Blaze to distract player while positioning for attack",
       "puppet_focus": true,
       "duration": 6000
     },
     "threat_display": {
-      "description": "Tail fluffs up, ears flatten, jaw opens showing teeth, puppet held defensively",
+      "description": "Tail fluffs up, ears flatten, jaw opens showing teeth, Blaze held defensively",
       "duration": 2500
     },
     "hunting_mode": {
-      "description": "Predatory movements, sudden direction changes, puppet used as lure",
+      "description": "Predatory movements, sudden direction changes, Blaze used as lure",
       "speed_multiplier": 1.5,
       "duration": 8000
     }
   },
   "ai_behaviors": {
-    "primary_strategy": "use_puppet_as_lure",
+    "primary_strategy": "use_blaze_as_lure",
     "secondary_strategy": "pounce_from_shadows",
     "personality": "playful_but_deadly",
     "threat_level": "high",
