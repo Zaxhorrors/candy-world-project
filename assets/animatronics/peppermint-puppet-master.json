@@ -1,0 +1,252 @@
+{
+  "name": "Peppermint Puppet Master",
+  "type": "cat_animatronic",
+  "description": "A menacing feline animatronic with peppermint green and magenta coloring, holding a cute bunny-cat hybrid puppet",
+  "colors": {
+    "primary": "#00D946",
+    "secondary": "#FF00FF",
+    "accent": "#FFFFFF",
+    "pattern": "peppermint_stripes"
+  },
+  "body": {
+    "type": "cat",
+    "head": {
+      "shape": "feline",
+      "ears": {
+        "type": "pointed_cat_ears",
+        "color_primary": "#00D946",
+        "color_inner": "#FF00FF",
+        "position": "top",
+        "articulated": true,
+        "rotation_range": 45
+      },
+      "face": {
+        "eyes": {
+          "type": "glowing_slit_pupils",
+          "color": "#FF00FF",
+          "glow_intensity": 0.8
+        },
+        "nose": {
+          "type": "cat_nose",
+          "color": "#FF00FF"
+        },
+        "mouth": {
+          "type": "articulated_maw",
+          "max_opening": 120,
+          "color": "#000000",
+          "teeth": "metallic_sharp"
+        },
+        "whiskers": {
+          "count": 8,
+          "color": "#FFFFFF",
+          "animatable": true
+        }
+      },
+      "jaw": {
+        "articulated": true,
+        "movement_range": 90,
+        "snap_speed": "fast"
+      }
+    },
+    "torso": {
+      "shape": "feline_quadruped",
+      "segments": [
+        {
+          "name": "upper_body",
+          "color_pattern": "striped",
+          "stripe_1": "#00D946",
+          "stripe_2": "#FF00FF"
+        },
+        {
+          "name": "mid_body",
+          "color_pattern": "striped",
+          "stripe_1": "#FF00FF",
+          "stripe_2": "#00D946"
+        },
+        {
+          "name": "lower_body",
+          "color_pattern": "striped",
+          "stripe_1": "#00D946",
+          "stripe_2": "#FF00FF"
+        }
+      ],
+      "rotation": {
+        "articulated": true,
+        "rotation_range": 180
+      }
+    },
+    "limbs": {
+      "front_left": {
+        "type": "articulated_paw",
+        "segments": 3,
+        "claws": "retractable_metallic",
+        "articulation_range": 120
+      },
+      "front_right": {
+        "type": "articulated_paw",
+        "segments": 3,
+        "claws": "retractable_metallic",
+        "articulation_range": 120
+      },
+      "hind_left": {
+        "type": "articulated_hind_leg",
+        "segments": 3,
+        "articulation_range": 100
+      },
+      "hind_right": {
+        "type": "articulated_hind_leg",
+        "segments": 3,
+        "articulation_range": 100
+      }
+    },
+    "tail": {
+      "type": "prehensile_cat_tail",
+      "segments": 5,
+      "color_pattern": "candy_cane",
+      "stripe_1": "#00D946",
+      "stripe_2": "#FF00FF",
+      "articulation_range": 360,
+      "can_wrap": true,
+      "threat_animation": true
+    },
+    "hands": {
+      "type": "articulated_paws",
+      "dexterity_level": "high",
+      "puppet_holding_capacity": 2,
+      "grip_strength": "variable",
+      "animations": [
+        "manipulate_puppet",
+        "display_puppet",
+        "wave_puppet",
+        "attack_with_puppet"
+      ]
+    }
+  },
+  "puppet": {
+    "name": "Mint Buddy",
+    "type": "bunny_cat_hybrid",
+    "size": "small",
+    "colors": {
+      "primary": "#00D946",
+      "secondary": "#FF00FF",
+      "fur": "#FFFFFF"
+    },
+    "features": {
+      "head": {
+        "bunny_ears": {
+          "type": "long_floppy",
+          "color": "#00D946",
+          "inner_color": "#FF00FF"
+        },
+        "cat_ear_tufts": {
+          "on_top": true,
+          "color": "#FF00FF"
+        },
+        "eyes": {
+          "type": "cute_round",
+          "color": "#00D946",
+          "pupils": "black"
+        },
+        "whiskers": {
+          "count": 6,
+          "color": "#FFFFFF"
+        },
+        "nose": {
+          "type": "pink_bunny",
+          "color": "#FFB6C1"
+        }
+      },
+      "body": {
+        "fluffy": true,
+        "color_pattern": "peppermint_stripes",
+        "stripe_1": "#00D946",
+        "stripe_2": "#FF00FF"
+      },
+      "tail": {
+        "type": "fluffy_hybrid",
+        "fluffy_bunny_style": true,
+        "color": "#00D946",
+        "striped": "#FF00FF"
+      },
+      "limbs": {
+        "type": "cute_stubby",
+        "color": "#FFFFFF"
+      }
+    },
+    "animations": [
+      "wave_paws",
+      "bounce",
+      "spin",
+      "wiggle_nose",
+      "flop_ears",
+      "distract_player"
+    ]
+  },
+  "animations": {
+    "idle": {
+      "description": "Cat sits calmly, occasionally moving the puppet around",
+      "loop": true,
+      "duration": 3000
+    },
+    "alert": {
+      "description": "Ears perk up, eyes glow brighter, tail twitches",
+      "trigger": "player_detected",
+      "duration": 2000
+    },
+    "stalk": {
+      "description": "Low crouch, slow deliberate movements, puppet held at chest",
+      "duration": 5000
+    },
+    "pounce": {
+      "description": "Rapid acceleration, puppet swings around, claws extended",
+      "duration": 1500
+    },
+    "puppet_show": {
+      "description": "Animatronic holds puppet up and manipulates it expressively",
+      "duration": 4000,
+      "puppet_animations": ["wave_paws", "bounce", "spin"]
+    },
+    "distraction": {
+      "description": "Uses puppet to distract player while positioning for attack",
+      "puppet_focus": true,
+      "duration": 6000
+    },
+    "threat_display": {
+      "description": "Tail fluffs up, ears flatten, jaw opens showing teeth, puppet held defensively",
+      "duration": 2500
+    },
+    "hunting_mode": {
+      "description": "Predatory movements, sudden direction changes, puppet used as lure",
+      "speed_multiplier": 1.5,
+      "duration": 8000
+    }
+  },
+  "ai_behaviors": {
+    "primary_strategy": "use_puppet_as_lure",
+    "secondary_strategy": "pounce_from_shadows",
+    "personality": "playful_but_deadly",
+    "threat_level": "high",
+    "intelligence": "cunning",
+    "pack_behavior": false,
+    "territorial": true
+  },
+  "mechanics": {
+    "movement_speed": {
+      "idle_speed": 0,
+      "stalk_speed": 0.3,
+      "hunt_speed": 1.0,
+      "pounce_speed": 2.5
+    },
+    "damage_types": ["bite", "claw_scratch", "puppet_distraction"],
+    "special_ability": "puppet_manipulation_distraction",
+    "weak_point": "joints_in_tail",
+    "power_level": 85,
+    "difficulty": "hard"
+  },
+  "encounters": {
+    "first_encounter": "Day 3 - Puppet Show",
+    "typical_location": "Candy Corridor, Sweet Shop",
+    "activity_hours": "all_hours",
+    "hunting_frequency": "very_high"
+  }
+}
