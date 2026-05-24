@@ -1,0 +1,257 @@
+{
+  "name": "Max",
+  "full_name": "Maximilian",
+  "type": "player_character",
+  "role": "protagonist_survivor",
+  "description": "Max is a skinny blonde teenager trapped in the nightmarish Candy World. As the player character, Max must navigate the facility, uncover its dark secrets, survive for 15 days, and escape. With only iassc's guidance through radio, Max must evade deadly animatronics while piecing together the mystery of why he was brought here.",
+  "appearance": {
+    "hair": {
+      "type": "blonde",
+      "style": "messy_teenage",
+      "color": "#FFD700"
+    },
+    "build": {
+      "type": "skinny",
+      "height": "average_teenage",
+      "frame": "slender_athletic"
+    },
+    "clothing": {
+      "shirt": {
+        "type": "casual_hoodie",
+        "color": "#4A90E2",
+        "worn_from_stress": true
+      },
+      "pants": {
+        "type": "jeans",
+        "color": "#1C1C1C",
+        "pockets": "multiple_for_items"
+      },
+      "shoes": {
+        "type": "sneakers",
+        "color": "#808080",
+        "for_running": true
+      }
+    },
+    "distinctive_features": [
+      "frightened_but_determined_eyes",
+      "pale_from_stress",
+      "moves_quietly_when_scared"
+    ]
+  },
+  "player_mechanics": {
+    "health_system": {
+      "max_health": 100,
+      "current_health": 100,
+      "regeneration": "slow_when_safe",
+      "damage_types": ["bite", "claw", "blunt_force", "psychological_terror"]
+    },
+    "stamina_system": {
+      "max_stamina": 100,
+      "sprint_cost": 20,
+      "sprint_duration": "5_seconds",
+      "regeneration": "when_standing_still"
+    },
+    "movement": {
+      "walk_speed": 1.0,
+      "sprint_speed": 2.5,
+      "crouch_speed": 0.5,
+      "crouch_stealth": "silent_movement"
+    },
+    "inventory": {
+      "capacity": 8,
+      "weight_system": true,
+      "quick_access_slots": 3
+    },
+    "hiding_mechanics": {
+      "hide_locations": [
+        "under_desks",
+        "under_beds",
+        "inside_lockers",
+        "behind_curtains",
+        "ventilation_shafts",
+        "closets"
+      ],
+      "hide_duration": "unlimited_while_safe",
+      "detection_risk": "animatronics_may_find_you"
+    }
+  },
+  "survival_gameplay": {
+    "days_to_survive": 15,
+    "day_night_cycle": true,
+    "night_danger_level": "extreme",
+    "day_danger_level": "high",
+    "objectives": [
+      "survive_each_day",
+      "avoid_animatronics",
+      "gather_evidence_and_clues",
+      "uncover_candy_world_mystery",
+      "find_escape_route",
+      "survive_final_day"
+    ],
+    "game_loop": "wake_up_avoid_hunt_investigate_survive_repeat"
+  },
+  "communication_system": {
+    "radio": {
+      "type": "handheld_encrypted_radio",
+      "contact": "iassc",
+      "communication": "two_way",
+      "updates_frequency": "varies_by_situation",
+      "signal_strength": "variable_by_location"
+    },
+    "dialogue_interactions": [
+      "with_iassc_via_radio",
+      "internal_monologue",
+      "discovered_audio_logs"
+    ]
+  },
+  "investigation_gameplay": {
+    "evidence_collection": {
+      "types": [
+        "documents",
+        "audio_recordings",
+        "photographs",
+        "security_footage",
+        "employee_records"
+      ],
+      "storage": "inventory_and_analysis_log"
+    },
+    "mystery_progression": [
+      "why_is_max_here",
+      "what_is_candy_world",
+      "why_do_animatronics_hunt",
+      "what_happened_to_others",
+      "how_to_escape"
+    ],
+    "clue_revelation": "progressive_story_unlocking"
+  },
+  "item_system": {
+    "essential_items": [
+      {
+        "name": "Radio",
+        "type": "communication_device",
+        "critical": true
+      },
+      {
+        "name": "Flashlight",
+        "type": "light_source",
+        "battery_life": "decreasing"
+      },
+      {
+        "name": "Map",
+        "type": "navigation",
+        "reveals_as_explored": true
+      }
+    ],
+    "defensive_items": [
+      {
+        "name": "Flare",
+        "type": "distraction",
+        "uses": 3,
+        "effect": "temporarily_stuns_animatronics"
+      },
+      {
+        "name": "Noise_Maker",
+        "type": "distraction",
+        "uses": 5,
+        "effect": "draws_attention_away"
+      }
+    ],
+    "utility_items": [
+      {
+        "name": "Lockpick",
+        "type": "access_tool",
+        "uses": "unlimited",
+        "unlocks": "certain_doors"
+      },
+      {
+        "name": "Hacking_Device",
+        "type": "tech_tool",
+        "uses": "limited",
+        "requires_iassc_help": true
+      }
+    ]
+  },
+  "relationships": {
+    "iassc": {
+      "type": "ally_guide",
+      "trust_level": "high",
+      "communication": "radio_based",
+      "support_type": "tactical_and_emotional"
+    },
+    "animatronics": {
+      "relationship": "hunted_by",
+      "survival_priority": "evade_at_all_costs"
+    }
+  },
+  "emotional_system": {
+    "fear_level": "dynamic",
+    "sanity_system": true,
+    "stress_effects": [
+      "blurred_vision_when_panicked",
+      "difficulty_breathing_sounds",
+      "trembling_when_hiding",
+      "decision_making_difficulty"
+    ],
+    "recovery": "safety_rest_iassc_support"
+  },
+  "gameplay_choices": {
+    "moral_decisions": [
+      "fight_or_flight",
+      "trust_certain_characters",
+      "risk_taking",
+      "evidence_collection_priority"
+    ],
+    "consequences": "affects_ending_variations"
+  },
+  "story_arc": {
+    "beginning": "Day 1 - Wake up confused and frightened in Candy World",
+    "progression": [
+      "Day 1-3: Understand the danger, meet iassc",
+      "Day 3-7: Begin investigation and uncover clues",
+      "Day 7-10: Deeper revelations about facility",
+      "Day 10-14: Piece together escape plan with iassc",
+      "Day 15: Final confrontation and escape attempt"
+    ],
+    "ending_possibilities": [
+      "successful_escape",
+      "bittersweet_victory",
+      "trapped_ending",
+      "sacrifice_ending",
+      "secret_ending"
+    ]
+  },
+  "personality": {
+    "initial_state": "scared_confused_teenage",
+    "character_development": "becomes_more_determined_and_strategic",
+    "voice_tone": "young_frightened_determined",
+    "inner_thoughts": "player_hears_max_internal_monologue"
+  },
+  "abilities": {
+    "physical": {
+      "running": "good_for_escape",
+      "climbing": "limited",
+      "strength": "low_cannot_fight_directly"
+    },
+    "mental": {
+      "puzzle_solving": "excellent",
+      "evidence_analysis": "with_iassc_help",
+      "observation": "good_for_investigation"
+    },
+    "survival": {
+      "hiding": "excellent",
+      "sneaking": "excellent",
+      "pattern_recognition": "good"
+    }
+  },
+  "lore": {
+    "background": "Max is an ordinary teenager who was lured into Candy World under false pretenses. He has no idea why he was chosen, but he knows he must survive and uncover the truth. With iassc's guidance, he's determined to escape and expose what's really happening here.",
+    "personal_stakes": "his_life_and_freedom",
+    "motivation": "survive_and_escape_candy_world"
+  },
+  "difficulty_scaling": {
+    "easy_mode": "more_hide_spots_fewer_animatronics",
+    "normal_mode": "balanced_challenge",
+    "hard_mode": "fewer_resources_aggressive_hunting",
+    "nightmare_mode": "animatronics_always_hunting"
+  }
+}
