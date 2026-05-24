@@ -1,7 +1,7 @@
 {
   "name": "Candy Josh",
   "type": "cat_animatronic",
-  "description": "A menacing feline animatronic named Candy Josh with peppermint green and magenta coloring, holding his puppet companion Blaze - a cute bunny-cat hybrid",
+  "description": "A menacing feline animatronic named Candy Josh with peppermint green and magenta coloring, holding his puppet companion Blaze - a cute bunny-cat hybrid. His story culminates in a dramatic final confrontation where he crashes through the exit door only to be hit by iassc's rescue van.",
   "colors": {
     "primary": "#00D946",
     "secondary": "#FF00FF",
@@ -219,6 +219,33 @@
       "description": "Predatory movements, sudden direction changes, Blaze used as lure",
       "speed_multiplier": 1.5,
       "duration": 8000
+    },
+    "final_chase": {
+      "description": "Candy Josh enters full rampage mode, chasing Max toward the exit with maximum ferocity",
+      "speed_multiplier": 3.0,
+      "fury_level": "maximum",
+      "duration": 6000,
+      "trigger": "day_15_final_escape"
+    },
+    "door_smash": {
+      "description": "Candy Josh crashes through the emergency exit door with tremendous force, shattering it to pieces",
+      "force": "devastating",
+      "sound": "explosive_crash",
+      "debris": "metal_and_wood_flying",
+      "duration": 2000,
+      "particle_effects": "sparks_and_splinters"
+    },
+    "van_impact": {
+      "description": "Candy Josh is struck by iassc's rescue van, flying backward with cinematic impact",
+      "impact_force": "catastrophic",
+      "sound": "heavy_vehicle_collision",
+      "ragdoll_physics": true,
+      "duration": 3000,
+      "visual_effects": [
+        "shattered_animatronic_pieces",
+        "sparking_electronics",
+        "peppermint_debris_explosion"
+      ]
     }
   },
   "ai_behaviors": {
@@ -244,9 +271,86 @@
     "difficulty": "hard"
   },
   "encounters": {
-    "first_encounter": "Day 3 - Puppet Show",
-    "typical_location": "Candy Corridor, Sweet Shop",
+    "first_encounter": "Day 1-5 - Puppet Show and Hunts",
+    "typical_location": "Candy Corridor, Sweet Shop, Main Atrium",
     "activity_hours": "all_hours",
-    "hunting_frequency": "very_high"
+    "hunting_frequency": "very_high",
+    "final_encounter": "Day 15 - Climactic Chase and Exit"
+  },
+  "ending_sequence": {
+    "trigger": "max_reaches_exit_on_day_15",
+    "sequence_steps": [
+      {
+        "step": 1,
+        "name": "Final Chase",
+        "description": "Candy Josh enters full rampage mode chasing Max toward the emergency exit",
+        "duration": 6000
+      },
+      {
+        "step": 2,
+        "name": "Door Smash",
+        "description": "Candy Josh crashes through the reinforced emergency exit door with devastating force",
+        "duration": 2000,
+        "visual_effects": "explosive_door_destruction"
+      },
+      {
+        "step": 3,
+        "name": "Van Arrival",
+        "description": "iassc's rescue van comes barreling around the corner at high speed",
+        "duration": 1500,
+        "audio": "screeching_tires_van_engine"
+      },
+      {
+        "step": 4,
+        "name": "Collision",
+        "description": "The van strikes Candy Josh with catastrophic force, sending him flying",
+        "duration": 3000,
+        "visual_effects": "ragdoll_physics_animatronic_destruction",
+        "audio": "massive_collision_sound"
+      },
+      {
+        "step": 5,
+        "name": "Impact Results",
+        "description": "Candy Josh crashes to the ground, severely damaged, peppermint body parts scattered",
+        "duration": 2000,
+        "state": "heavily_damaged_but_still_moving"
+      },
+      {
+        "step": 6,
+        "name": "Van Door Opens",
+        "description": "iassc steps out of the van and extends his hand to Max",
+        "duration": 2000,
+        "dialogue": "Max, get in! NOW!"
+      },
+      {
+        "step": 7,
+        "name": "Escape",
+        "description": "Max enters the van as Candy Josh attempts to pursue, severely weakened",
+        "duration": 3000,
+        "outcome": "successful_escape_with_iassc"
+      }
+    ],
+    "cinematography": "cinematic_camera_angles_throughout",
+    "emotional_payoff": "climactic_rescue_by_iassc"
+  },
+  "damage_states": {
+    "post_van_collision": {
+      "description": "Candy Josh after being hit by the van",
+      "body_condition": "heavily_damaged",
+      "functionality": "severely_compromised",
+      "visual_state": [
+        "peppermint_body_cracked",
+        "sparks_from_exposed_circuits",
+        "one_eye_flickering",
+        "blaze_puppet_ejected_and_damaged",
+        "movement_limping_erratic"
+      ],
+      "threat_level": "reduced_but_still_dangerous"
+    }
+  },
+  "lore": {
+    "story_arc": "Candy Josh starts as the primary hunter but is ultimately defeated by iassc's intervention at the climax",
+    "significance": "his_destruction_marks_the_beginning_of_max_and_iassc_escape",
+    "symbolism": "represents_candy_world_being_crashed_through_by_reality"
   }
 }
