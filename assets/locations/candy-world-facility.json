@@ -1,0 +1,456 @@
+{
+  "name": "Candy World Facility",
+  "type": "massive_entertainment_complex",
+  "description": "A sprawling candy-themed entertainment building where Max must survive for 15 days. Three horrifying animatronics spawn one at a time from the central stage and hunt through the facility. Max starts at the ticket booth entrance.",
+  "dimensions": {
+    "total_length": 500,
+    "total_width": 300,
+    "total_height": 150,
+    "unit": "meters"
+  },
+  "spawn_system": {
+    "animatronic_spawning": "one_at_a_time_from_stage",
+    "spawn_location": "central_stage",
+    "spawn_timing": [
+      {
+        "day": "1-5",
+        "animatronic": "Candy Josh",
+        "spawn_time": "night_cycle_begins"
+      },
+      {
+        "day": "6-10",
+        "animatronic": "Sheriff Bailey",
+        "spawn_time": "night_cycle_begins",
+        "note": "Candy Josh may still hunt during day"
+      },
+      {
+        "day": "11-15",
+        "animatronic": "Upside Down",
+        "spawn_time": "night_cycle_begins",
+        "note": "All three animatronics may be active"
+      }
+    ],
+    "spawn_ritual": "animatronic_performs_on_stage_before_hunting"
+  },
+  "areas": {
+    "ticket_booth_entrance": {
+      "name": "Ticket Booth Entrance",
+      "type": "safe_starting_zone",
+      "coordinates": {
+        "x": 0,
+        "y": 0
+      },
+      "dimensions": {
+        "length": 30,
+        "width": 25
+      },
+      "description": "The entrance where Max begins. A colorful booth with ticket windows. Relatively safe but monitored.",
+      "features": [
+        "ticket_windows",
+        "welcome_desk",
+        "information_pamphlets",
+        "emergency_exit_door"
+      ],
+      "hiding_spots": [
+        "behind_counter",
+        "in_storage_closet",
+        "under_welcome_desk"
+      ],
+      "connections_to": [
+        "main_atrium"
+      ],
+      "animatronic_access": "yes"
+    },
+    "main_atrium": {
+      "name": "Main Atrium",
+      "type": "central_hub",
+      "coordinates": {
+        "x": 30,
+        "y": 0
+      },
+      "dimensions": {
+        "length": 150,
+        "width": 200
+      },
+      "description": "The massive central area containing the ball pit, three slides, and stage. Highly exposed but interconnected.",
+      "features": [
+        "central_stage",
+        "ball_pit",
+        "three_slides",
+        "party_tables",
+        "lights_and_speakers"
+      ],
+      "sections": {
+        "central_stage": {
+          "name": "Central Performance Stage",
+          "type": "animatronic_spawn_point",
+          "coordinates": {
+            "x": 75,
+            "y": 100
+          },
+          "dimensions": {
+            "length": 40,
+            "width": 50
+          },
+          "description": "Where all animatronics spawn and begin their hunts. The stage has lighting effects and speakers.",
+          "features": [
+            "stage_curtains",
+            "spotlight_system",
+            "sound_system",
+            "microphone_stand",
+            "trap_door_underneath"
+          ],
+          "spawn_mechanics": {
+            "animatronic_appears": "curtains_open",
+            "duration": "30_seconds",
+            "performance": "menacing_dance_or_display",
+            "then_hunts": "true"
+          },
+          "hiding_spots": [
+            "under_stage",
+            "behind_curtains",
+            "in_prop_storage"
+          ]
+        },
+        "ball_pit": {
+          "name": "Massive Ball Pit",
+          "type": "interactive_hazard",
+          "coordinates": {
+            "x": 100,
+            "y": 60
+          },
+          "dimensions": {
+            "length": 80,
+            "width": 60,
+            "depth": 15
+          },
+          "description": "A massive pit filled with colorful foam balls. Slows movement but provides concealment. Animatronics can access it too.",
+          "mechanics": {
+            "movement_speed_reduction": 0.5,
+            "concealment_level": "high",
+            "noise_suppression": true,
+            "animatronic_movement": "slower_but_more_dangerous"
+          },
+          "hazards": [
+            "disorientation",
+            "trapped_movement",
+            "difficult_escape"
+          ]
+        },
+        "slide_1_red": {
+          "name": "Red Slide",
+          "type": "interactive_feature",
+          "coordinates": {
+            "x": 50,
+            "y": 80
+          },
+          "dimensions": {
+            "height": 30,
+            "width": 8
+          },
+          "description": "A giant red spiral slide descending into the ball pit.",
+          "mechanics": {
+            "one_way_slide": true,
+            "cannot_climb_back": true,
+            "fast_descent": true,
+            "lands_in": "ball_pit"
+          },
+          "usage": "escape_route_but_risky"
+        },
+        "slide_2_blue": {
+          "name": "Blue Slide",
+          "type": "interactive_feature",
+          "coordinates": {
+            "x": 75,
+            "y": 80
+          },
+          "dimensions": {
+            "height": 30,
+            "width": 8
+          },
+          "description": "A giant blue spiral slide descending into the ball pit.",
+          "mechanics": {
+            "one_way_slide": true,
+            "cannot_climb_back": true,
+            "fast_descent": true,
+            "lands_in": "ball_pit"
+          },
+          "usage": "escape_route_but_risky"
+        },
+        "slide_3_yellow": {
+          "name": "Yellow Slide",
+          "type": "interactive_feature",
+          "coordinates": {
+            "x": 100,
+            "y": 80
+          },
+          "dimensions": {
+            "height": 30,
+            "width": 8
+          },
+          "description": "A giant yellow spiral slide descending into the ball pit.",
+          "mechanics": {
+            "one_way_slide": true,
+            "cannot_climb_back": true,
+            "fast_descent": true,
+            "lands_in": "ball_pit"
+          },
+          "usage": "escape_route_but_risky"
+        },
+        "party_table_1_pink": {
+          "name": "Pink Party Table",
+          "type": "gathering_spot",
+          "coordinates": {
+            "x": 30,
+            "y": 50
+          },
+          "dimensions": {
+            "length": 20,
+            "width": 15
+          },
+          "description": "A decorated party table with pink tablecloth and chairs.",
+          "features": [
+            "party_decorations",
+            "place_settings",
+            "centerpiece"
+          ],
+          "hiding_spots": [
+            "under_table",
+            "behind_decorations"
+          ]
+        },
+        "party_table_2_cyan": {
+          "name": "Cyan Party Table",
+          "type": "gathering_spot",
+          "coordinates": {
+            "x": 30,
+            "y": 130
+          },
+          "dimensions": {
+            "length": 20,
+            "width": 15
+          },
+          "description": "A decorated party table with cyan tablecloth and chairs.",
+          "features": [
+            "party_decorations",
+            "place_settings",
+            "centerpiece"
+          ],
+          "hiding_spots": [
+            "under_table",
+            "behind_decorations"
+          ]
+        },
+        "party_table_3_yellow": {
+          "name": "Yellow Party Table",
+          "type": "gathering_spot",
+          "coordinates": {
+            "x": 140,
+            "y": 50
+          },
+          "dimensions": {
+            "length": 20,
+            "width": 15
+          },
+          "description": "A decorated party table with yellow tablecloth and chairs.",
+          "features": [
+            "party_decorations",
+            "place_settings",
+            "centerpiece"
+          ],
+          "hiding_spots": [
+            "under_table",
+            "behind_decorations"
+          ]
+        },
+        "party_table_4_green": {
+          "name": "Green Party Table",
+          "type": "gathering_spot",
+          "coordinates": {
+            "x": 140,
+            "y": 130
+          },
+          "dimensions": {
+            "length": 20,
+            "width": 15
+          },
+          "description": "A decorated party table with green tablecloth and chairs.",
+          "features": [
+            "party_decorations",
+            "place_settings",
+            "centerpiece"
+          ],
+          "hiding_spots": [
+            "under_table",
+            "behind_decorations"
+          ]
+        }
+      }
+    },
+    "toy_shop": {
+      "name": "Toy Shop",
+      "type": "commercial_area",
+      "coordinates": {
+        "x": 250,
+        "y": 50
+      },
+      "dimensions": {
+        "length": 100,
+        "width": 80
+      },
+      "description": "A sprawling toy store filled with shelves, displays, and merchandise. Dark corners and narrow aisles make it ideal for hiding and hunting.",
+      "sections": {
+        "main_floor": {
+          "name": "Main Sales Floor",
+          "features": [
+            "tall_shelves",
+            "toy_displays",
+            "narrow_aisles",
+            "cash_register"
+          ],
+          "hiding_spots": [
+            "between_shelves",
+            "under_displays",
+            "inside_display_boxes"
+          ]
+        },
+        "plushie_section": {
+          "name": "Plushie Corner",
+          "features": [
+            "bins_of_stuffed_animals",
+            "hanging_plushies",
+            "soft_surfaces"
+          ],
+          "hiding_spots": [
+            "buried_in_plushie_bins",
+            "behind_hanging_plushies"
+          ]
+        },
+        "stockroom": {
+          "name": "Back Stockroom",
+          "features": [
+            "storage_boxes",
+            "shelving_units",
+            "loading_door"
+          ],
+          "hiding_spots": [
+            "inside_large_boxes",
+            "behind_shelves",
+            "under_stacked_boxes"
+          ]
+        }
+      },
+      "connections_to": [
+        "main_atrium"
+      ],
+      "animatronic_access": "yes",
+      "danger_level": "high"
+    }
+  },
+  "animatronic_patrol_routes": {
+    "candy_josh_phase": {
+      "days": "1-5",
+      "spawn_location": "central_stage",
+      "patrol_pattern": [
+        "stage_performance",
+        "atrium_hunting",
+        "slide_area_stalking",
+        "ball_pit_searching",
+        "party_tables_circling"
+      ],
+      "respawn_point": "central_stage"
+    },
+    "sheriff_bailey_phase": {
+      "days": "6-10",
+      "spawn_location": "central_stage",
+      "patrol_pattern": [
+        "stage_performance",
+        "toy_shop_invasion",
+        "atrium_gunslinging",
+        "aisles_systematic_search"
+      ],
+      "respawn_point": "central_stage",
+      "note": "Candy Josh may still appear during day cycles"
+    },
+    "upside_down_phase": {
+      "days": "11-15",
+      "spawn_location": "central_stage",
+      "patrol_pattern": [
+        "stage_emotional_display",
+        "atrium_emotional_manipulation",
+        "all_areas_unpredictable",
+        "targets_player_emotionally"
+      ],
+      "respawn_point": "central_stage",
+      "note": "All three animatronics may be active simultaneously"
+    }
+  },
+  "safe_zones": {
+    "ticket_booth": {
+      "name": "Ticket Booth",
+      "safety_level": "relative_high",
+      "camera_coverage": "yes"
+    },
+    "hidden_areas": [
+      "ventilation_shafts",
+      "maintenance_closets",
+      "prop_storage_under_stage"
+    ]
+  },
+  "item_spawn_locations": {
+    "flashlight_batteries": [
+      "stockroom_shelves",
+      "maintenance_closet"
+    ],
+    "flares": [
+      "under_stage",
+      "prop_storage"
+    ],
+    "evidence_documents": [
+      "behind_ticket_booth",
+      "toy_shop_storage",
+      "stage_prop_area"
+    ]
+  },
+  "day_night_mechanics": {
+    "day_cycle": {
+      "duration": "8_minutes_game_time",
+      "animatronic_activity": "reduced_but_present",
+      "visibility": "high",
+      "investigation_time": "good"
+    },
+    "night_cycle": {
+      "duration": "12_minutes_game_time",
+      "animatronic_activity": "extreme",
+      "visibility": "low_lights_only",
+      "survival_priority": "high"
+    }
+  },
+  "overall_danger_zones": {
+    "central_stage": {
+      "danger_level": "extreme",
+      "reason": "animatronic_spawn_point"
+    },
+    "atrium_open_areas": {
+      "danger_level": "very_high",
+      "reason": "exposed_hunting_ground"
+    },
+    "toy_shop": {
+      "danger_level": "very_high",
+      "reason": "narrow_aisles_ideal_for_ambush"
+    },
+    "party_tables": {
+      "danger_level": "high",
+      "reason": "open_with_limited_hiding"
+    },
+    "ticket_booth": {
+      "danger_level": "low",
+      "reason": "monitored_and_relatively_safe"
+    }
+  },
+  "lore": {
+    "facility_purpose": "entertainment_complex_hiding_dark_secrets",
+    "animatronic_behavior": "they_perform_before_hunting",
+    "stage_significance": "where_animatronics_spawn_and_reveal_themselves"
+  }
+}
