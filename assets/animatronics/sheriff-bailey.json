@@ -1,7 +1,7 @@
 {
   "name": "Sheriff Bailey",
   "type": "western_animatronic",
-  "description": "A menacing western-themed animatronic with a circular body, wooden legs, a single glowing eye, wearing a sheriff's hat and sporting a prominent mustache. Armed with a grey revolver for intimidating encounters.",
+  "description": "A menacing western-themed animatronic with a circular body, wooden legs, a single glowing eye, wearing a sheriff's hat and sporting a prominent mustache. Armed with a grey revolver that he uses to shoot Max as a deadly jumpscare attack, causing Max to lose a life.",
   "colors": {
     "primary": "#8B4513",
     "secondary": "#D2691E",
@@ -163,7 +163,10 @@
         "type": "orange_red_glow",
         "intensity": 0.8,
         "duration": 200
-      }
+      },
+      "accuracy": 0.85,
+      "damage_per_shot": 20,
+      "fire_rate": "variable"
     }
   },
   "animations": {
@@ -221,48 +224,144 @@
     "mechanical_laugh": {
       "description": "Body rotates and vibrates, mustache bounces, eye blinks maniacally",
       "duration": 2000
+    },
+    "jumpscare_shoot": {
+      "description": "Sheriff Bailey suddenly appears and fires multiple shots at Max with deadly accuracy",
+      "trigger": "player_spotted_suddenly",
+      "duration": 3000,
+      "sequence_steps": [
+        {
+          "step": 1,
+          "name": "Appearance",
+          "description": "Sheriff Bailey materializes with terrifying speed, eye blazing orange",
+          "duration": 500,
+          "audio": "mechanical_scream_wild_west"
+        },
+        {
+          "step": 2,
+          "name": "Quick_Draw",
+          "description": "Revolver drawn with lightning speed, spinning in hand",
+          "duration": 400,
+          "audio": "metallic_draw_sound"
+        },
+        {
+          "step": 3,
+          "name": "Point_and_Fire",
+          "description": "Sheriff Bailey points directly at Max and squeezes trigger",
+          "duration": 200,
+          "audio": "revolver_trigger_click"
+        },
+        {
+          "step": 4,
+          "name": "First_Shot",
+          "description": "BANG! First bullet fired - muzzle flash illuminates area",
+          "duration": 300,
+          "audio": "loud_gunshot",
+          "visual_effects": "bright_muzzle_flash_orange_smoke",
+          "hits": "max_takes_damage"
+        },
+        {
+          "step": 5,
+          "name": "Follow_Up_Shots",
+          "description": "Sheriff Bailey fires 2-3 more rapid shots at Max",
+          "duration": 800,
+          "audio": "rapid_gunfire",
+          "visual_effects": "multiple_muzzle_flashes",
+          "hits": "max_can_dodge_or_take_additional_damage"
+        },
+        {
+          "step": 6,
+          "name": "Screen_Effects",
+          "description": "Screen flashes red from impact, hearing ringing sound, camera shakes violently",
+          "duration": 1000,
+          "visual_effects": "blood_splatter_red_screen_flash",
+          "audio": "ringing_tinnitus_sound"
+        },
+        {
+          "step": 7,
+          "name": "Max_Death",
+          "description": "Max falls to ground, gasping for breath, losing 1 life",
+          "duration": 1500,
+          "outcome": "lose_one_life_respawn_at_ticket_booth"
+        }
+      ]
+    },
+    "reload_and_laugh": {
+      "description": "After shooting, Sheriff Bailey reloads while laughing mechanically, eye blazing with malice",
+      "duration": 2000,
+      "audio": "mechanical_laughter_cylinder_spinning"
     }
   },
   "ai_behaviors": {
     "primary_strategy": "intimidate_with_firepower",
     "secondary_strategy": "circle_and_fire",
+    "jumpscare_strategy": "sudden_appearance_rapid_fire",
     "personality": "western_outlaw_sheriff",
     "threat_level": "extreme",
     "intelligence": "calculating",
     "combat_style": "ranged_gunslinger",
     "taunt_frequency": "high",
+    "trigger_happy": true,
     "territorial": true,
-    "trigger_happy": true
+    "hunting_style": "aggressive_direct_approach"
   },
   "mechanics": {
     "movement_speed": {
       "idle_speed": 0,
       "stalk_speed": 0.4,
       "advance_speed": 0.7,
-      "chase_speed": 1.2
+      "chase_speed": 1.2,
+      "jumpscare_speed": 2.0
     },
     "damage_types": ["revolver_shot", "intimidation", "charge"],
     "special_ability": "rapid_fire_sequence",
+    "jumpscare_damage": 25,
+    "shots_per_jumpscare": "2_to_4",
     "accuracy": 0.85,
-    "fire_rate": "variable",
+    "fire_rate": "very_fast_during_jumpscare",
     "rounds_per_magazine": 6,
     "reload_time": 3000,
     "weak_point": "single_eye",
     "power_level": 88,
-    "difficulty": "extreme"
+    "difficulty": "extreme",
+    "life_loss_on_jumpscare": 1
   },
   "encounters": {
-    "first_encounter": "Day 5 - High Noon Showdown",
-    "typical_location": "Candy Saloon, Western District",
+    "first_encounter": "Day 6 - High Noon Showdown",
+    "typical_location": "Candy Saloon, Toy Shop, Western District",
     "activity_hours": "all_hours",
     "hunting_frequency": "very_high",
-    "catchphrase": "Draw, pardner!"
+    "jumpscare_frequency": "frequent_and_unpredictable",
+    "catchphrase": "Draw, pardner!",
+    "warning_signs": [
+      "mechanical_footsteps_from_wooden_legs",
+      "eye_glow_intensifying",
+      "mustache_violent_twitching",
+      "revolver_spinning_sound"
+    ]
   },
   "visual_design": {
     "overall_aesthetic": "wild_west_horror",
     "inspiration": "haunted_sheriff_construct",
     "silhouette": "imposing_circular_menace",
     "lighting": "orange_and_shadow",
-    "atmosphere": "tumbleweed_and_gunpowder"
+    "atmosphere": "tumbleweed_and_gunpowder",
+    "jumpscare_visual": "sudden_mechanical_appearance_with_blazing_eye"
+  },
+  "jumpscare_mechanics": {
+    "trigger_conditions": [
+      "player_caught_hiding",
+      "player_spotted_in_open",
+      "player_running_away",
+      "random_ambush_events"
+    ],
+    "difficulty_scaling": {
+      "easy_mode": "fewer_jumpscare_events",
+      "normal_mode": "regular_jumpscare_frequency",
+      "hard_mode": "constant_jumpscare_threat",
+      "nightmare_mode": "extremely_frequent_unpredictable_jumpscares"
+    },
+    "player_reaction_time": "minimal_can_dodge_some_shots",
+    "life_impact": "each_jumpscare_costs_1_life_minimum"
   }
 }
