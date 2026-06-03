@@ -1,0 +1,175 @@
+{
+  "name": "Health Bar System",
+  "type": "player_status_system",
+  "description": "Tracks Max's physical health and stamina in real-time during gameplay.",
+  "health_system": {
+    "max_health": 100,
+    "current_health_on_spawn": 100,
+    "health_display": "percentage_based_bar",
+    "location_on_screen": "bottom_left_corner",
+    "visual_style": {
+      "color_full": "#00FF00",
+      "color_damaged": "#FFD700",
+      "color_critical": "#FF0000",
+      "bar_width": 200,
+      "bar_height": 20
+    },
+    "health_thresholds": {
+      "100_percent": {
+        "status": "perfect_condition",
+        "color": "#00FF00",
+        "movement_speed": 1.0
+      },
+      "75_percent": {
+        "status": "healthy",
+        "color": "#7FFF00",
+        "movement_speed": 1.0
+      },
+      "50_percent": {
+        "status": "injured",
+        "color": "#FFD700",
+        "movement_speed": 0.9,
+        "limping_animation": true
+      },
+      "25_percent": {
+        "status": "heavily_wounded",
+        "color": "#FF6600",
+        "movement_speed": 0.7,
+        "heavy_limping_animation": true,
+        "vision_blurred": true
+      },
+      "1_percent": {
+        "status": "critical_condition",
+        "color": "#FF0000",
+        "movement_speed": 0.5,
+        "severe_limping": true,
+        "extreme_vision_blur": true,
+        "heartbeat_sound": "loud_and_rapid"
+      }
+    }
+  },
+  "damage_system": {
+    "damage_sources": [
+      {
+        "source": "Candy Josh bite",
+        "damage": 50,
+        "knockback": "extreme",
+        "visual_effect": "blood_splatter"
+      },
+      {
+        "source": "Sheriff Bailey gunshot",
+        "damage": 25,
+        "knockback": "moderate",
+        "visual_effect": "bullet_wound"
+      },
+      {
+        "source": "Upside Down emotional attack",
+        "damage": 30,
+        "knockback": "light",
+        "visual_effect": "psychological_damage_screen_distortion"
+      },
+      {
+        "source": "Environmental hazard",
+        "damage": 10,
+        "knockback": "none",
+        "visual_effect": "minor_injury_animation"
+      }
+    ]
+  },
+  "stamina_system": {
+    "max_stamina": 100,
+    "current_stamina_on_spawn": 100,
+    "stamina_display": "percentage_based_bar",
+    "location_on_screen": "bottom_left_corner_below_health",
+    "visual_style": {
+      "color_full": "#4169E1",
+      "color_depleted": "#1E90FF",
+      "bar_width": 200,
+      "bar_height": 15
+    },
+    "stamina_regeneration": {
+      "rate_per_second_standing": 2,
+      "rate_per_second_walking": 1,
+      "rate_per_second_sprinting": -10,
+      "rate_per_second_hiding": 3,
+      "rate_per_second_in_danger": 0
+    }
+  },
+  "health_recovery": {
+    "safe_hiding": {
+      "location": "hiding_spot",
+      "recovery_rate": "2_health_per_second",
+      "requirement": "must_not_move"
+    },
+    "iassc_support": {
+      "trigger": "radio_conversation_during_safe_moment",
+      "recovery_amount": 15,
+      "requirement": "must_be_in_safe_area"
+    },
+    "first_aid_items": [
+      {
+        "name": "Bandage Kit",
+        "recovery": 20,
+        "uses": 3
+      },
+      {
+        "name": "Pain Medication",
+        "recovery": 10,
+        "uses": 5
+      },
+      {
+        "name": "Medical Supplies",
+        "recovery": 40,
+        "uses": 1,
+        "rarity": "rare"
+      }
+    ],
+    "sleep_mechanic": {
+      "trigger": "complete_a_full_day_cycle",
+      "effect": "restore_to_100_health_next_morning",
+      "requirement": "survive_the_night"
+    }
+  },
+  "display_elements": {
+    "health_bar": {
+      "position": "bottom_left",
+      "shows_number": true,
+      "format": "100/100",
+      "icon": "heart_shape"
+    },
+    "stamina_bar": {
+      "position": "bottom_left_below_health",
+      "shows_number": true,
+      "format": "100/100",
+      "icon": "lightning_bolt"
+    },
+    "condition_text": {
+      "position": "above_health_bar",
+      "updates": "dynamically",
+      "text_options": [
+        "Healthy",
+        "Injured",
+        "Wounded",
+        "Critical"
+      ]
+    }
+  },
+  "difficulty_effects": {
+    "easy_mode": {
+      "damage_reduction": 0.75,
+      "health_recovery_boost": 1.5
+    },
+    "normal_mode": {
+      "damage_reduction": 1.0,
+      "health_recovery_boost": 1.0
+    },
+    "hard_mode": {
+      "damage_reduction": 1.2,
+      "health_recovery_boost": 0.8
+    },
+    "nightmare_mode": {
+      "damage_reduction": 1.5,
+      "health_recovery_boost": 0.5
+    }
+  }
+}
