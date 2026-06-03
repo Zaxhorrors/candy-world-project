@@ -1,0 +1,374 @@
+{
+  "name": "Game Opening Cutscene",
+  "type": "cinematic_sequence",
+  "description": "An intense opening cutscene showing Max being dressed in a security guard uniform with equipment before being trapped in Candy World.",
+  "cutscene_type": "opening_prologue",
+  "trigger": "game_start",
+  "duration_seconds": 90,
+  "skippable": false,
+  "scenes": [
+    {
+      "scene_number": 1,
+      "name": "Darkness and Confusion",
+      "duration": 10,
+      "description": "Max regains consciousness in complete darkness. Confused groaning sounds. Screen is black with subtle breathing audio.",
+      "audio": [
+        "max_groaning_regaining_consciousness",
+        "muffled_ambient_sound",
+        "heartbeat_sound"
+      ],
+      "visuals": [
+        "black_screen",
+        "fade_in_slightly_to_dimly_lit_room"
+      ],
+      "dialogue": {
+        "max_internal": "Where... where am I? What happened?"
+      }
+    },
+    {
+      "scene_number": 2,
+      "name": "The Security Office",
+      "duration": 15,
+      "description": "Scene fades in showing a dark security office. Max is sitting in a chair, dazed. A security uniform is laid out on a table in front of him. A figure in shadows approaches.",
+      "audio": [
+        "creepy_ambient_music_begins",
+        "footsteps_echoing",
+        "mechanical_buzzing"
+      ],
+      "visuals": [
+        "security_office_setting",
+        "dim_fluorescent_lighting",
+        "security_uniform_on_table",
+        "shadowy_figure_approaching"
+      ],
+      "camera_work": "slow_zoom_on_uniform"
+    },
+    {
+      "scene_number": 3,
+      "name": "Mysterious Voice",
+      "duration": 10,
+      "description": "A distorted, mechanical voice speaks to Max from the shadows. The figure remains unseen.",
+      "audio": [
+        "distorted_voice_speaks",
+        "radio_static_effect"
+      ],
+      "dialogue": {
+        "mystery_voice": "Max... you've been chosen. Put on the uniform. You'll need it."
+      },
+      "max_reaction": "looks_confused_scared"
+    },
+    {
+      "scene_number": 4,
+      "name": "Dressing Up - Shirt",
+      "duration": 8,
+      "description": "Max, compelled by fear, reaches for the security shirt. Camera shows him putting on the dark blue uniform shirt with 'SECURITY' printed on the back.",
+      "audio": [
+        "fabric_rustling",
+        "nervous_breathing",
+        "background_mechanical_sounds"
+      ],
+      "visuals": [
+        "max_grabs_shirt",
+        "close_up_of_security_logo",
+        "max_puts_on_shirt"
+      ]
+    },
+    {
+      "scene_number": 5,
+      "name": "Dressing Up - Vest",
+      "duration": 8,
+      "description": "Max puts on the tactical bullet vest. It's heavy and intimidating. The vest has multiple pockets and reinforced plating.",
+      "audio": [
+        "vest_straps_fastening",
+        "metallic_plating_sound",
+        "heavy_breathing"
+      ],
+      "visuals": [
+        "max_picks_up_vest",
+        "close_up_of_bulletproof_vest_details",
+        "max_secures_vest"
+      ]
+    },
+    {
+      "scene_number": 6,
+      "name": "Pants and Belt",
+      "duration": 6,
+      "description": "Max stands and puts on the reinforced security pants with a heavy duty belt designed to hold equipment.",
+      "audio": [
+        "belt_buckle_clicks",
+        "pants_rustling",
+        "equipment_jingling"
+      ],
+      "visuals": [
+        "max_stands_up",
+        "pants_and_belt_assembly",
+        "belt_with_loops_for_weapons"
+      ]
+    },
+    {
+      "scene_number": 7,
+      "name": "The Hat",
+      "duration": 5,
+      "description": "Max picks up the security cap with bold 'SECURITY' lettering across the front. He places it on his head with trembling hands.",
+      "audio": [
+        "cap_settling_on_head",
+        "fabric_adjusting",
+        "max_nervous_swallow"
+      ],
+      "visuals": [
+        "close_up_of_cap",
+        "security_lettering_visible",
+        "max_puts_on_cap",
+        "camera_pulls_back_to_show_transformation"
+      ]
+    },
+    {
+      "scene_number": 8,
+      "name": "Equipping - Baton",
+      "duration": 8,
+      "description": "A baton is placed on the table. Max picks it up, testing its weight. It's heavy and solid - designed for combat.",
+      "audio": [
+        "baton_whoosh_sound",
+        "max_breathing_heavily",
+        "tense_orchestral_sting"
+      ],
+      "visuals": [
+        "baton_on_table",
+        "close_up_of_baton",
+        "max_grips_baton",
+        "baton_swinging_in_hand"
+      ],
+      "equipment_details": {
+        "name": "Security Baton",
+        "material": "reinforced_rubber_and_steel",
+        "color": "#1C1C1C",
+        "length": "24_inches",
+        "weight": "heavy"
+      }
+    },
+    {
+      "scene_number": 9,
+      "name": "Equipping - Taser",
+      "duration": 8,
+      "description": "A taser is placed before Max. He hesitantly picks it up. The device hums with electric potential. He attaches it to his belt.",
+      "audio": [
+        "taser_charging_hum",
+        "electric_crackling",
+        "max_gulp"
+      ],
+      "visuals": [
+        "taser_on_table",
+        "close_up_of_taser_with_electric_charge",
+        "max_picks_up_taser",
+        "max_attaches_to_belt"
+      ],
+      "equipment_details": {
+        "name": "Stun Taser",
+        "type": "non_lethal_weapon",
+        "color": "#FFD700",
+        "power": "high_voltage",
+        "uses_per_charge": 5
+      }
+    },
+    {
+      "scene_number": 10,
+      "name": "The Final Piece",
+      "duration": 10,
+      "description": "The mystery figure steps partially into view - still mostly shadowed. Places a final item: a badge that says 'SECURITY GUARD - CANDY WORLD FACILITY'",
+      "audio": [
+        "footsteps",
+        "badge_placed_on_table",
+        "sinister_voice_returns",
+        "dramatic_music_swell"
+      ],
+      "visuals": [
+        "shadowy_figure_steps_forward_slightly",
+        "badge_gleams_in_dim_light",
+        "max_looks_at_badge_terrified"
+      ],
+      "dialogue": {
+        "mystery_voice": "Welcome to Candy World, Security Guard. You have 15 days. Survive if you can."
+      ]
+    },
+    {
+      "scene_number": 11,
+      "name": "Fully Equipped",
+      "duration": 12,
+      "description": "Camera pans over Max's full equipped body. He's now wearing the complete security uniform - shirt, pants, vest, hat, with baton and taser visible. He looks terrified but determined.",
+      "audio": [
+        "dramatic_orchestral_music",
+        "equipment_settling_sounds",
+        "electric_hum_of_facility"
+      ],
+      "visuals": [
+        "full_body_camera_pan",
+        "security_uniform_complete",
+        "baton_on_belt",
+        "taser_on_belt",
+        "security_hat_visible",
+        "max_standing_ready_but_scared",
+        "badge_pinned_to_vest"
+      ],
+      "cinematography": "dramatic_lighting_shadows_across_max_face"
+    },
+    {
+      "scene_number": 12,
+      "name": "The Door Opens",
+      "duration": 15,
+      "description": "A large door to the facility opens before Max. Bright colorful lights flood in - clashing with the darkness of the security office. Max hears distant carnival music and children's laughter... but something is deeply wrong about it.",
+      "audio": [
+        "door_hydraulics_opening",
+        "carnival_music_distorted",
+        "eerie_children_laughter",
+        "ominous_sound_design"
+      ],
+      "visuals": [
+        "massive_door_slides_open",
+        "bright_candy_colored_lights_flood_in",
+        "silhouette_of_max_against_light",
+        "candy_world_entrance_visible_beyond"
+      ],
+      "dialogue": {
+        "max_internal": "What is this place...?"
+      }
+    },
+    {
+      "scene_number": 13,
+      "name": "Step Into Darkness",
+      "duration": 10,
+      "description": "Max takes a first step into Candy World. The door slams shut behind him with a terrifying finality. The cheerful carnival atmosphere is revealed to be a thin veneer over something sinister.",
+      "audio": [
+        "max_footstep",
+        "door_slamming_shut",
+        "mechanical_lock_engaging",
+        "carnival_music_distorts_becoming_menacing"
+      ],
+      "visuals": [
+        "max_walks_through_door",
+        "door_slams_behind",
+        "first_view_of_candy_world",
+        "animatronic_shadows_barely_visible",
+        "lights_flicker"
+      ]
+    },
+    {
+      "scene_number": 14,
+      "name": "Radio Contact",
+      "duration": 12,
+      "description": "Max's security radio crackles to life. A calm, professional voice breaks through - it's iassc making first contact from outside the facility.",
+      "audio": [
+        "radio_static_crackle",
+        "iassc_voice_through_radio",
+        "ambient_facility_sounds"
+      ],
+      "visuals": [
+        "close_up_of_radio_on_max_belt",
+        "screen_transition_to_game",
+        "candy_world_facility_loading"
+      ],
+      "dialogue": {
+        "iassc_radio": "Max, can you hear me? I'm iassc. I've hacked into their comms. Listen carefully - you need to survive the next 15 days. Trust no one but me. We'll get you out of there."
+      }
+    },
+    {
+      "scene_number": 15,
+      "name": "Game Begins",
+      "duration": 5,
+      "description": "Fade to black. Text appears: 'DAY 1 - 06:00' and the game officially begins.",
+      "audio": [
+        "game_music_begins",
+        "door_lock_sound",
+        "heartbeat_audio"
+      ],
+      "visuals": [
+        "fade_to_black",
+        "day_counter_appears",
+        "clock_appears",
+        "life_counter_appears",
+        "game_hud_fades_in",
+        "player_control_returns"
+      ]
+    }
+  ],
+  "security_uniform_equipment": {
+    "shirt": {
+      "type": "security_shirt",
+      "color": "#1E3A5F",
+      "material": "durable_polyester",
+      "sleeves": "short",
+      "logo": "SECURITY",
+      "logo_position": "center_back_and_chest"
+    },
+    "pants": {
+      "type": "tactical_pants",
+      "color": "#1C1C1C",
+      "material": "reinforced_cotton",
+      "pockets": "multiple",
+      "belt_loops": "heavy_duty"
+    },
+    "vest": {
+      "type": "tactical_vest",
+      "name": "Bullet Resistant Vest",
+      "color": "#2F2F2F",
+      "material": "kevlar_reinforced",
+      "protection_level": "level_2",
+      "features": [
+        "reinforced_plating",
+        "multiple_pockets",
+        "reflective_strips"
+      ]
+    },
+    "hat": {
+      "type": "security_cap",
+      "color": "#1C1C1C",
+      "material": "heavy_cotton",
+      "logo": "SECURITY",
+      "logo_position": "front_center",
+      "logo_size": "large_bold_lettering"
+    },
+    "badge": {
+      "type": "security_identification",
+      "text": "SECURITY GUARD - CANDY WORLD FACILITY",
+      "number": "UNKNOWN",
+      "issue_date": "TODAY",
+      "expiration": "UNKNOWN"
+    }
+  },
+  "weapons_and_tools": {
+    "baton": {
+      "name": "Security Baton",
+      "type": "melee_weapon",
+      "material": "reinforced_rubber_and_steel",
+      "color": "#1C1C1C",
+      "length": 24,
+      "weight": "heavy",
+      "location": "belt_left_side",
+      "purpose": "self_defense_non_lethal",
+      "functionality": "cannot_actually_harm_animatronics"
+    },
+    "taser": {
+      "name": "Stun Taser",
+      "type": "non_lethal_weapon",
+      "material": "heavy_duty_plastic_metal",
+      "color": "#FFD700",
+      "location": "belt_right_side",
+      "charge": "fully_charged",
+      "uses": 5,
+      "purpose": "temporary_stun",
+      "functionality": "can_temporarily_stun_animatronics_for_escape"
+    }
+  },
+  "lore_context": {
+    "why_security_uniform": "Max was somehow forced into this role. The facility wanted him disguised as security, perhaps to trick him or to make the horror more ironic.",
+    "weapons_are_illusion": "The baton and taser give Max false confidence, but they prove mostly useless against the animatronics. Real survival comes from hiding and evading.",
+    "fake_authority": "The uniform and badge make Max feel like he has authority, but he has none. He's just a prisoner in a costume.",
+    "psychological_setup": "Being dressed as security makes the betrayal and helplessness even more psychologically damaging when Max realizes the weapons and uniform mean nothing."
+  },
+  "cinematography_notes": {
+    "camera_style": "cinematic_immersive",
+    "lighting": "dim_with_dramatic_shadows",
+    "music_progression": "ominous_to_terrifying",
+    "pacing": "slow_building_tension",
+    "tone": "psychological_horror"
+  }
+}
