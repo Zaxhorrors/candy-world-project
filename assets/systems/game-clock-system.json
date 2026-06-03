@@ -1,0 +1,259 @@
+{
+  "name": "Game Clock System",
+  "type": "time_management_system",
+  "description": "A comprehensive in-game clock system that tracks the 15-day survival period, day/night cycles, time zones, and critical time events in Candy World.",
+  "game_duration": {
+    "total_days": 15,
+    "objective": "survive_all_15_days",
+    "failure_condition": "lose_all_5_lives_before_day_15_completion"
+  },
+  "time_system": {
+    "real_time_to_game_time": {
+      "1_real_minute": "approximately_1_game_hour",
+      "real_game_hour": 60,
+      "1_real_second": "1_game_minute"
+    },
+    "game_day_structure": {
+      "full_day_duration_minutes": 20,
+      "day_cycle_duration_minutes": 8,
+      "night_cycle_duration_minutes": 12
+    }
+  },
+  "daily_cycle": {
+    "day_phase": {
+      "start_time": "06:00",
+      "end_time": "18:00",
+      "duration_minutes": 8,
+      "activities": [
+        "exploration",
+        "evidence_gathering",
+        "investigation",
+        "safe_traveling"
+      ],
+      "animatronic_activity": "reduced_but_present",
+      "visibility": "high",
+      "light_level": "bright"
+    },
+    "night_phase": {
+      "start_time": "18:00",
+      "end_time": "06:00",
+      "duration_minutes": 12,
+      "activities": [
+        "survival",
+        "hiding",
+        "evasion",
+        "listening_to_iassc"
+      ],
+      "animatronic_activity": "extreme",
+      "visibility": "low",
+      "light_level": "dark"
+    }
+  },
+  "clock_display": {
+    "format": "24_hour_hh_mm_ss",
+    "example_display": "14:32:45",
+    "update_frequency": "every_1_game_second",
+    "location_on_screen": "top_right_corner",
+    "visual_style": {
+      "font": "monospace_digital",
+      "color_day": "#00FF00",
+      "color_night": "#FF4500",
+      "background": "semi_transparent_black",
+      "size": "large_readable"
+    }
+  },
+  "day_counter": {
+    "format": "Day X/15",
+    "example_display": "Day 7/15",
+    "location_on_screen": "top_left_corner",
+    "visual_style": {
+      "color": "#FFD700",
+      "font": "bold",
+      "size": "large"
+    },
+    "critical_days": [
+      {
+        "day": 1,
+        "event": "introduction_to_horror"
+      },
+      {
+        "day": 5,
+        "event": "sheriff_bailey_arrives"
+      },
+      {
+        "day": 10,
+        "event": "upside_down_awakens"
+      },
+      {
+        "day": 15,
+        "event": "final_escape_attempt_with_iassc"
+      }
+    ]
+  },
+  "life_counter": {
+    "format": "Lives: X/5",
+    "example_display": "Lives: 3/5",
+    "location_on_screen": "top_center",
+    "visual_style": {
+      "color_full": "#FF0000",
+      "color_low": "#FF6600",
+      "warning_at": 2,
+      "critical_at": 1
+    },
+    "life_loss_events": [
+      "candy_josh_bite_jumpscare",
+      "sheriff_bailey_shooting_jumpscare",
+      "upside_down_psychological_attack"
+    ]
+  },
+  "time_events": {
+    "day_1": {
+      "time": "06:00",
+      "event": "Wake up in Candy World",
+      "description": "Max regains consciousness in the ticket booth"
+    },
+    "day_1_night": {
+      "time": "18:00",
+      "event": "First night in Candy World",
+      "description": "Candy Josh spawns on stage for the first time"
+    },
+    "day_5": {
+      "time": "18:00",
+      "event": "Sheriff Bailey Arrives",
+      "description": "Sheriff Bailey spawns on stage, begins hunting"
+    },
+    "day_10": {
+      "time": "18:00",
+      "event": "Upside Down Awakens",
+      "description": "Upside Down performs on stage for the first time"
+    },
+    "day_15_morning": {
+      "time": "06:00",
+      "event": "Final Day Begins",
+      "description": "Max discovers the exit door location via iassc"
+    },
+    "day_15_afternoon": {
+      "time": "16:00",
+      "event": "Iassc Arrival Countdown",
+      "description": "iassc signals he's approaching in the van"
+    },
+    "day_15_evening": {
+      "time": "18:00",
+      "event": "The Final Chase Begins",
+      "description": "All animatronics hunt with maximum intensity"
+    },
+    "day_15_climax": {
+      "time": "19:30",
+      "event": "Candy Josh Door Smash",
+      "description": "Candy Josh crashes through emergency exit door"
+    },
+    "day_15_escape": {
+      "time": "19:33",
+      "event": "Van Collision and Rescue",
+      "description": "iassc hits Candy Josh with rescue van, pulls Max to safety"
+    }
+  },
+  "time_zone_system": {
+    "facility_time": {
+      "name": "Candy World Local Time",
+      "timezone": "UTC-5",
+      "display": "Standard 24-hour format",
+      "primary_clock": true
+    },
+    "external_time": {
+      "name": "Real World Time (iassc's location)",
+      "timezone": "UTC+0",
+      "display": "Optional secondary display",
+      "shows_communication_delay": true
+    }
+  },
+  "pause_and_resume": {
+    "pause_functionality": "available_anytime",
+    "resume_functionality": "continue_from_last_clock_time",
+    "clock_stops": "when_game_paused",
+    "timer_resets": "only_on_new_game"
+  },
+  "critical_time_warnings": {
+    "night_approaching": {
+      "warning_time": "17:50",
+      "message": "Darkness approaches... Take shelter NOW!",
+      "color": "#FF6600"
+    },
+    "animatronic_spawn_imminent": {
+      "warning_time": "18:00",
+      "message": "The animatronics are waking up!",
+      "color": "#FF0000"
+    },
+    "day_approaching": {
+      "warning_time": "05:50",
+      "message": "Daylight is coming... Safety approaches!",
+      "color": "#00FF00"
+    },
+    "one_life_left": {
+      "condition": "lives_equal_1",
+      "message": "CRITICAL: You have only 1 life remaining!",
+      "color": "#FF0000",
+      "continuous_warning": true
+    }
+  },
+  "animations": {
+    "clock_tick": {
+      "description": "Clock displays tick sound every game second",
+      "sound": "soft_digital_tick",
+      "frequency": "every_1_second"
+    },
+    "hour_change": {
+      "description": "Clock blinks when hour changes",
+      "sound": "digital_beep",
+      "frequency": "every_hour"
+    },
+    "day_change": {
+      "description": "Dramatic screen transition when day changes",
+      "sound": "dramatic_orchestral_sting",
+      "visual_effect": "fade_to_black_fade_in"
+    },
+    "night_transition": {
+      "description": "Sky darkens as night approaches",
+      "sound": "ominous_ambient_sound",
+      "color_shift": "bright_to_dark"
+    },
+    "day_transition": {
+      "description": "Sky brightens as day approaches",
+      "sound": "hopeful_ambient_sound",
+      "color_shift": "dark_to_bright"
+    }
+  },
+  "difficulty_scaling": {
+    "easy_mode": {
+      "day_duration": 25,
+      "night_duration": 15,
+      "animatronic_spawn_delay": "longer"
+    },
+    "normal_mode": {
+      "day_duration": 20,
+      "night_duration": 12,
+      "animatronic_spawn_delay": "standard"
+    },
+    "hard_mode": {
+      "day_duration": 15,
+      "night_duration": 10,
+      "animatronic_spawn_delay": "shorter"
+    },
+    "nightmare_mode": {
+      "day_duration": 12,
+      "night_duration": 8,
+      "animatronic_spawn_delay": "immediate"
+    }
+  },
+  "speedrun_mode": {
+    "enabled": true,
+    "clock_display": "larger_more_visible",
+    "timer_precision": "milliseconds",
+    "leaderboard_tracking": "enabled"
+  },
+  "lore": {
+    "clock_origin": "The clock in the facility runs on its own time, independent of the outside world",
+    "time_dilation": "Time in Candy World seems to move differently - 1 real minute feels like 1 game hour",
+    "significance": "Every second counts. Max must reach the exit before day 15 ends or be trapped forever"
+  }
+}
